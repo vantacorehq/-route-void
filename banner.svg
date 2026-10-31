@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#0A0000"/>
+    </linearGradient>
+    
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#FF0000"/>
+      <stop offset="100%" stop-color="#550000"/>
+    </linearGradient>
+
+    <filter id="redGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Abstract BGP Routing Map -->
+  <g stroke="#222222" stroke-width="1.5" fill="none">
+    <line x1="0" y1="50" x2="300" y2="200" />
+    <line x1="0" y1="300" x2="400" y2="150" />
+    <line x1="300" y1="200" x2="600" y2="100" />
+    <line x1="600" y1="100" x2="900" y2="250" />
+    <line x1="400" y1="150" x2="900" y2="250" stroke="#FF0000" stroke-dasharray="5 5" filter="url(#redGlow)"/>
+    <line x1="900" y1="250" x2="1200" y2="150" stroke="#FF0000" stroke-width="2" filter="url(#redGlow)"/>
+  </g>
+
+  <!-- Nodes -->
+  <g fill="#FFFFFF">
+    <circle cx="300" cy="200" r="4" />
+    <circle cx="600" cy="100" r="6" fill="#FF0000" filter="url(#redGlow)"/>
+    <circle cx="400" cy="150" r="4" />
+    <circle cx="900" cy="250" r="5" fill="#FF0000" />
+    <circle cx="1200" cy="150" r="8" fill="#FF0000" filter="url(#redGlow)"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="60" y="200" font-family="Courier New, monospace" font-size="110" font-weight="900" fill="url(#textGrad)" letter-spacing="8" filter="url(#redGlow)">ROUTE-VOID</text>
+  
+  <text x="65" y="240" font-family="Courier New, monospace" font-size="18" fill="#FF0000" letter-spacing="4">AUTONOMOUS BGP HIJACKING FRAMEWORK</text>
+  
+  <!-- Terminal Data -->
+  <g transform="translate(65, 280)">
+    <rect x="0" y="0" width="700" height="1" fill="#FF0000" opacity="0.5"/>
+    <text x="0" y="20" font-family="Courier New, monospace" font-size="12" fill="#FFFFFF" opacity="0.8">&gt; PROTOCOL: <tspan fill="#FF0000">BGP (INSECURE)</tspan></text>
+    <text x="0" y="40" font-family="Courier New, monospace" font-size="12" fill="#FFFFFF" opacity="0.8">&gt; TARGET: <tspan fill="#FF0000">GLOBAL ROUTING TABLES</tspan></text>
+    <text x="0" y="60" font-family="Courier New, monospace" font-size="12" fill="#FFFFFF" font-weight="bold">&gt; STATUS: TRAFFIC INTERCEPTED.</text>
+  </g>
+</svg>
